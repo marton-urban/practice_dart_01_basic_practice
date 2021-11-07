@@ -1,0 +1,67 @@
+You can't access the base type props or methods with its nullable type
+	e.g: String? s; s.toUpperCase() is not allowed due to s possibly being null	
+The only props available for nullable types are toString(), == & hashCode
+
+
+- function local variables can be initialized later (flow analysis) <= during promotion "as type" is added in the background (same with null assertion '!')
+
+- non-nullable top level variables (global) and static fields (=class variables?) MUST be initialied (flow analysis doesn't work here) <= here only late works
+
+- or make them nullable (?), so their default value is null
+
+- non-nullable class instance fields (non nullable fields) must also have a value before they reach the constructor body
+class RandomClass {
+  int x
+  int y = 7;
+  int z;
+  RandomClass({
+    required this.z
+  }) : x = 5 {
+    print('Constructor body');
+  }
+}
+
+- non-nullable optional (function?) parameters must also have a default value
+void optionalParam([int beta = 25]) {}
+(or make this nullable too) [int? beta]
+
+- instead of null assertion, use late:
+class Car {
+  int? _speed;
+  void accelerate() => _speed = 50; (unfortunately flow analysis doesn't automatically do the promotion)
+  int steer() => _speed = _speed! - 15;
+}
+
+class Car {
+  late int _speed;  //this makes more sense as it should never be null
+  void accelerate() => _speed = 50; (unfortunately flow analysis doesn't automatically do the promotion)
+  int steer() => _speed -= 15;
+}
+
+- late with other 
+class Weather {
+  later final int temp = readThermometer();
+}
+
+void main(List<String> arguments) {
+  var w = Weather();  // temp field is not initialized here
+  // w.temp = 5; you can assign it like this too, but the point is that you can only assign it once
+  print(w.temp + 25);  // but rather here when accessed since was lazily created
+}
+
+----
+
+int absoluteValue(int? value) {
+  if (value == null) {
+    throw Exception();
+  }
+  return value.abs();  // type promotion
+}
+
+or
+
+int absoluteValue(int? value) => value?.abs() ?? 0;
+
+----
+
+static later final int temp = checkTemp()
