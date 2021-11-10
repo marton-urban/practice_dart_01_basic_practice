@@ -81,4 +81,5 @@ should be.
 Note: You’ll see a common and valid use of
 the null assertion operator in the section
 below titled No promotion for non-local
-variables.
+variables (in class methods). Another option is to shadow the non-local
+variable with a local one.
