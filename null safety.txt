@@ -65,3 +65,15 @@ int absoluteValue(int? value) => value?.abs() ?? 0;
 ----
 
 static later final int temp = checkTemp()
+
+----
+
+Here’s an alternative to the assertion operator
+that won’t ever crash the app:
+
+bool flowerIsBeautiful = isBeautiful('flower'
+) ?? true;
+You’re leaving the decision up to the function,
+but giving it a default value by using the ??
+operator if the function doesn’t know what it
+should be.
