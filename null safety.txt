@@ -77,3 +77,8 @@ You’re leaving the decision up to the function,
 but giving it a default value by using the ??
 operator if the function doesn’t know what it
 should be.
+
+Note: You’ll see a common and valid use of
+the null assertion operator in the section
+below titled No promotion for non-local
+variables.
