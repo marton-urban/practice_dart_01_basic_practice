@@ -40,7 +40,7 @@ class Car {
 
 - late with other 
 class Weather {
-  later final int temp = readThermometer();
+  late final int temp = readThermometer();
 }
 
 void main(List<String> arguments) {
@@ -64,7 +64,7 @@ int absoluteValue(int? value) => value?.abs() ?? 0;
 
 ----
 
-static later final int temp = checkTemp()
+static late final int temp = checkTemp()
 
 ----
 
