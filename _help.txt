@@ -1,7 +1,8 @@
 Mostly everything in Dart is a class, and objects are instances of these classes (numbers, functions and even null are objects).
-
 Collection-if/for/spread(...list, ...map): if (addblue) 'blue',
 158. video: Dartx
+//TODO
+/// documentation
 
 dart create
 code .
@@ -17,50 +18,49 @@ dart test     # or `flutter analyze`
 
 TYPE CONVERSION:
 double.parse()
-int.tryparse('123')
+int.tryparse()
 .toInt() .toDouble()
-round()
-toStringAsFixed(1)
-
-//TODO
-/// documentation
+.round()
+.toString()
+.toStringAsFixed(1)
+as String
 
 INPUT:
 import 'dart:io';
-stdin.readLineSync();
 stdout.write('');
+final input = stdin.readLineSync();
 
 RANDOM:
-import 'math:io';
-rng = Random()
+import 'dart:math';
+final rng = Random();
 rng.nextInt(3)
 
 STRING:
 .toUpper()
 .contains()
-line.split(',');
-myString.replaceAll('"','');
+.split(',');
+.replaceAll(,);
 
 LIST (COLLECTIONS):
-list.length
-list.isEmpty
-list.isNotEmpty
-list.first
-list.last
-list.add('new item');
-list.addAll(otherList);
-list.insert(1, 'new item');
-list.remove('item');
-list.removeAt(0);
-list.clear();
-list.contains('item');
-cities.indexOf('item');
+.length
+.isEmpty
+.isNotEmpty
+.first
+.last
+.add('new item');
+.addAll(otherList);
+.insert(1, 'new item');
+.remove('item');
+.removeAt(0);
+.clear();
+.contains('item');
+.indexOf('item');
 list2 = [...list1];
 
-list.forEach(print);
-list.map((value) => value * 2); (map creates a lazy iterable, so toList() can help) Iterable<T> map<T>(T Function(int) f)
-list.where((value) => value % 2 ==0);
-list.firstWhere((x) => x == 5, orElse: () => -1);
+.forEach(print);
+.map((value) => value * 2); (map creates a lazy iterable, so toList() can help) Iterable<T> map<T>(T Function(int) f)
+.where((value) => value % 2 ==0);
+.firstWhere((x) => x == 5, orElse: () => -1);
 
 final sum = list.reduce((value, element) => value + element);
 
