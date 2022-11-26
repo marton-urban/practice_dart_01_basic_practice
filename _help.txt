@@ -78,10 +78,6 @@ mymap.keys/values/entries -> entry.key, entry.value
 mymap.containsKey(mykey)
 mymap.isEmpty
 
-for(var city in cities) {
-	print(city?.toUpperCase());
-} // if not null execute toUpperCase(), otherwise print null)
-
 FILE:
 File(inputFile).readAsLinesSync();
 
@@ -92,9 +88,9 @@ int newValue = myValue! (assertion)
 int newValue = myValue ?? 0; (if null)  //? if not null
 newValue ??= 0; (augmented assignment if-null operator: assign 0 only if it is currently null)
 
-for (var city in cities) {
- print(city?.toUpperCase());
-} // null city values will also be displayed without error
+for(var city in cities) {
+	print(city?.toUpperCase());
+} // if not null execute toUpperCase(), otherwise print null)
 
 EQUATABLE (only use with immutable classes => properties must be final)
 dependencies:
