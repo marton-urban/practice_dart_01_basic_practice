@@ -64,6 +64,9 @@ list2 = [...list1];
 
 final sum = list.reduce((value, element) => value + element);
 
+collection-if: if (addBlue) 'blue'
+			   if (addAll) ...['yellow','brown'],
+
 
 SET:
 .add('new item');
