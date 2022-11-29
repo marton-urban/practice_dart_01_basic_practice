@@ -38,7 +38,7 @@ rng.nextInt(3)
 STRING:
 .toUpper()
 .contains()
-.split(',');
+.split(',').last;
 .replaceAll(,);
 
 LIST (COLLECTIONS):
