@@ -5,7 +5,7 @@ The only props available for nullable types are toString(), == & hashCode
 
 - function local variables can be initialized later (flow analysis) <= during promotion "as type" is added in the background (same with null assertion '!')
 
-- non-nullable top level variables (global) and static fields (=class variables?) MUST be initialied (flow analysis doesn't work here) <= here only late works
+- non-nullable top level variables (global) and static fields (=class variables?) MUST be initialized (flow analysis doesn't work here) <= here only late works
 
 - or make them nullable (?), so their default value is null
 

@@ -64,13 +64,16 @@ list2 = [...list1];
 
 final sum = list.reduce((value, element) => value + element);
 
+collection-if: if (addBlue) 'blue'
+			   if (addAll) ...['yellow','brown'],
+
 
 SET:
-thisIsASet = {'Italy', 'UK', 'Russia'};
-thisIsASet.elementAt(0);
-thisIsASet.union(anotherSet)
-thisIsASet.intersection(anotherSet)
-thisIsASet.difference(anotherSet)
+.add('new item');
+.elementAt(0);
+.union(anotherSet)
+.intersection(anotherSet)
+.difference(anotherSet)
 
 MAPS:
 if (mymap['something']) == null)
