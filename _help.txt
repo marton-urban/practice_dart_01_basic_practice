@@ -36,7 +36,7 @@ final rng = Random();
 rng.nextInt(3)
 
 STRING:
-.toUpper()
+.toUpperCase()
 .contains()
 .split(',').last;
 .replaceAll(,);
