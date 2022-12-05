@@ -47,6 +47,7 @@ LIST (COLLECTIONS):
 .isNotEmpty
 .first
 .last
+.reduce(max); // import 'dart:math';
 .add('new item');
 .addAll(otherList);
 .insert(1, 'new item');
