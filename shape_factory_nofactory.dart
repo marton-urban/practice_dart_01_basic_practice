@@ -25,7 +25,7 @@ void printArea(Shape shape) {
   print(shape.area);
 }
 
-Shape fromJson(Map<String, Object> json) {
+Shape fromJson(Map<String, Object> json) {    // this could also be in the Shape class with static keyword
   final type = json['type'];
   switch (type) {
     case 'square':
