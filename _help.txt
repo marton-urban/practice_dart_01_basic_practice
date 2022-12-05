@@ -55,6 +55,7 @@ LIST (COLLECTIONS):
 .clear();
 .contains('item');
 .indexOf('item');
+.generate(howmany, (first_is_zero) => first_is_zero + 1);
 list2 = [...list1];
 
 .forEach(print);
