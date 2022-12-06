@@ -1,16 +1,20 @@
-class Temperature {
-  Temperature.celsius(this.celsius);
-  Temperature.farenheit(double farenheit) : celsius = (farenheit - 32) / 1.8;
-  double celsius;
-  double get farenheit => celsius * 1.8 + 32;
-  set farenheit(double farenheit) => celsius = (farenheit - 32) / 1.8;
+// this solution also works for [] and [ x ] as well
+import 'package:collection/collection.dart';
+
+int? firstNonConsecutive(List<int> arr) {
+  final missing = arr.isEmpty
+      ? null // add check so it also works for []
+      : List.generate(
+              arr.last - arr.first + 1,
+              (index) =>
+                  arr.first +
+                  index) // generate consecutive list without missing element
+          .firstWhereOrNull((e) => !arr.contains(
+              e)); // find first missing element by comparing to generated list
+  return missing != null ? missing + 1 : null;
 }
 
 void main() {
-  final temp1 = Temperature.celsius(30);
-  final temp2 = Temperature.farenheit(90);
-  print(temp1.celsius);
-  print(temp1.farenheit);
-  print(temp2.celsius);
-  print(temp2.farenheit);
+  print(firstNonConsecutive(const []));
+  print('cool');
 }
