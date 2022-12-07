@@ -36,7 +36,7 @@ final rng = Random();
 rng.nextInt(3)
 
 STRING:
-.toUpper()
+.toUpperCase()
 .contains()
 .split(',').last;
 .replaceAll(,);
@@ -47,6 +47,7 @@ LIST (COLLECTIONS):
 .isNotEmpty
 .first
 .last
+.reduce(max); // import 'dart:math';
 .add('new item');
 .addAll(otherList);
 .insert(1, 'new item');
@@ -55,6 +56,7 @@ LIST (COLLECTIONS):
 .clear();
 .contains('item');
 .indexOf('item');
+List.generate(howmany, (first_is_zero) => first_is_zero + 1);
 list2 = [...list1];
 
 .forEach(print);
