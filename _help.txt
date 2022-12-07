@@ -61,8 +61,8 @@ list2 = [...list1];
 .map((value) => value * 2); (map creates a lazy iterable, so toList() can help) Iterable<T> map<T>(T Function(int) f)
 .where((value) => value % 2 ==0);
 .firstWhere((x) => x == 5, orElse: () => -1);
-
-final sum = list.reduce((value, element) => value + element);
+.reduce((value, element) => value + element);
+.fold(0, (t, e) => (t as int) + e.length)
 
 collection-if: if (addBlue) 'blue'
 			   if (addAll) ...['yellow','brown'],
