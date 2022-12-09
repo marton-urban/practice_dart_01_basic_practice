@@ -47,6 +47,7 @@ LIST (COLLECTIONS):
 .isNotEmpty
 .first
 .last
+.sort()
 .reduce(max); // import 'dart:math';
 .add('new item');
 .addAll(otherList);
@@ -65,6 +66,7 @@ list2 = [...list1];
 .firstWhere((x) => x == 5, orElse: () => -1);
 .reduce((value, element) => value + element);
 .fold(0, (t, e) => (t as int) + e.length)
+.expand((i) => [i, i]).toList();
 
 collection-if: if (addBlue) 'blue'
 			   if (addAll) ...['yellow','brown'],
