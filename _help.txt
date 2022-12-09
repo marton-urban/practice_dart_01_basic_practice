@@ -47,7 +47,7 @@ LIST (COLLECTIONS):
 .isNotEmpty
 .first
 .last
-.sort()
+..sort()  //you can also use this in one-line functions: int findSmallestInt(List<int> arr)=>(arr..sort())[0];
 .reduce(max); // import 'dart:math';
 .add('new item');
 .addAll(otherList);
