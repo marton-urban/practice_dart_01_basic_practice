@@ -1,21 +1,14 @@
-import "package:test/test.dart";
-import "package:solution/solution.dart";
-import "dart:math";
+// this simple method converts the integers to a list of digits reversed
+int add(int num1, int num2){
+  final largerNum = num1 >= num2 ? num1 : num2;
+  final smallerNum = num1 < num2 ? num1 : num2;
+  final list1 = largerNum.toString().split('').reversed.map(int.parse).toList();
+  final list2 = smallerNum.toString().split('').reversed.map(int.parse).toList();
+  while (list1 != list2) list2.add(0);
+  final sumAsList = [for (var i = 0; i < list1.length ; i++) list1[i] + list2[i]];
+  return int.parse(sumAsList.reversed.join());
+}
 
-void main() {
-  group("fixed tests", () {
-    test("Testing for [1, 2, 3, 4, 5]", () => expect(positiveSum([1, 2, 3, 4, 5]), equals(15)));
-    test("Testing for [1, -2, 3, 4, 5]", () => expect(positiveSum([1, -2, 3, 4, 5]), equals(13)));
-    test("Testing for []", () => expect(positiveSum([]), equals(0)));
-    test("Testing for [-1, -2, -3, -4, -5]", () => expect(positiveSum([-1, -2, -3, -4, -5]), equals(0)));
-    test("Testing for [-1, 2, 3, 4, -5]", () => expect(positiveSum([-1, 2, 3, 4, -5]), equals(9)));
-  });
-  group("Random tests", () {
-    Random rinst = Random();
-    int sol(List<int> arr) => arr.where((x) => x > 0).fold(0, (a, b) => a + b);
-    for (int i = 0; i < 100; i++) {
-      List<int> arr = List<int>.generate(rinst.nextInt(20) + 1, (_) => rinst.nextInt(200) - 100);
-      test("Testing for $arr", () => expect(positiveSum([]..addAll(arr)), equals(sol(arr))));
-    }
-  });
+void main () {
+  print(add(123,11));
 }
