@@ -17,8 +17,8 @@ dart analyze     # or `flutter analyze`
 dart test     # or `flutter analyze`
 
 TYPE CONVERSION:
-double.parse()
-int.tryparse()
+double.parse()   // from String
+int.tryparse()   // from String
 .toInt() .toDouble()
 .round()
 .toString()
