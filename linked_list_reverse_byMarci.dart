@@ -128,7 +128,7 @@ void main() {
     list.push(i);
   }
 
-  print(list);
+  // print(list);
 
   final stopwatch = Stopwatch()..start();
   var previous = list.head; // 1
@@ -147,6 +147,6 @@ void main() {
 
   list.head = previous;
 
-  print(list);
+  // print(list);
   print('Executed in ${stopwatch.elapsed}');
 }

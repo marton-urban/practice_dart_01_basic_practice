@@ -124,9 +124,11 @@ class _LinkedListIterator<E> implements Iterator<E> {
 void main() {
   final list = LinkedList<int>();
 
-  for (var i = 1000000000; i > 0; i--) {
+  for (var i = 100000000; i > 0; i--) {
     list.push(i);
   }
+
+  // print(list);
 
   final stopwatch = Stopwatch()..start();
   var previous = list.head;
@@ -144,5 +146,6 @@ void main() {
 
   list.head = previous;
 
+  // print(list);
   print('Executed in ${stopwatch.elapsed}');
 }
