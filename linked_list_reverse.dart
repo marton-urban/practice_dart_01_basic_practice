@@ -121,8 +121,6 @@ class _LinkedListIterator<E> implements Iterator<E> {
   }
 }
 
-
-
 void main() {
   final list = LinkedList<int>();
   list.push(3);
@@ -130,20 +128,21 @@ void main() {
   list.push(1);
 
   print(list);
-  
-  var previous = list.head;  // 1
-  var current = list.head?.next;  // 2
-  var next = current?.next;  // 3
-  
+
+  var previous = list.head;
+  var current = list.head?.next;
+
   list.tail = previous;
   previous?.next = null;
-  
+
   while (current != null) {
-    current.next = previous;  // c:2->1; c:3->2; c:4->3; c:5->4
-    previous = current;  // p:2->1; p:3->2; p:4->3; p:5->4
-    current = next;  // c:3->4; c:4->5; c:5->null; c:null
-    next = current?.next;  // n:4->5; n:5->null; n:null; n:null
+    final next = current.next;
+    current.next = previous;
+    previous = current;
+    current = next;
   }
+
   list.head = previous;
+
   print(list);
 }
