@@ -1,14 +1,11 @@
-Future<int> countdown(int current) {
-  return Future.delayed(
-    Duration(seconds: 1),
-    () => current,
-  );
+Future<void> countdown(int current) {
+  return Future.delayed(Duration(seconds: 1), () => print(current));
 }
 
 Future<void> main() async {
   try {
     for (var i = 5; i >= 0; i--) {
-      print(await countdown(i));
+      await countdown(i);
     }
     print('Done');
   } catch (e) {
