@@ -14,9 +14,6 @@ Future<int> sumStream(Stream<int> stream) async {
   return sum;
 }
 
-Future<int> sumStream2(Stream<int> stream) =>
-    stream.reduce((previous, element) => previous + element);
-
 Iterable<int> count(int n) sync* {
   for (var i = 1; i <= n; i++) {
     yield i;
