@@ -11,7 +11,7 @@ String fizzbuzz(int i) {
 }
 
 void main() {
-  // print(List.generate(20, (int index) => fizzbuzz(index + 1)).join('\n'));
+  // print(List.generate(20, (int i) => fizzbuzz(i + 1)).join('\n'));
   // print([for (var i = 1; i <= 20; i++) i].map(fizzbuzz).join('\n'));
   // print(1.to(20).map(fizzbuzz).join('\n'));
 }
