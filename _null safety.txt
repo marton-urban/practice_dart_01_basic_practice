@@ -7,7 +7,7 @@ The only props available for nullable types are toString(), == & hashCode
 
 - non-nullable top level variables (global) and static fields (=class variables?) MUST be initialized (flow analysis doesn't work here) <= here only late works
 
-- or make them nullable (?), so their default value is null
+- or make them nullable, so their default value is null
 
 - non-nullable class instance fields (non nullable fields) must also have a value before they reach the constructor body
 class RandomClass {
@@ -67,19 +67,66 @@ int absoluteValue(int? value) => value?.abs() ?? 0;
 static late final int temp = checkTemp()
 
 ----
+bool? isBeautiful(String? item) {
+if (item == 'flower') {
+return true;
+} else if (item == 'garbage') {
+return false;
+}
+return null;
+}
+
+bool flowerIsBeautiful = isBeautiful('flower'
+)!;
 
 Here’s an alternative to the assertion operator
 that won’t ever crash the app:
 
 bool flowerIsBeautiful = isBeautiful('flower'
 ) ?? true;
-You’re leaving the decision up to the function,
-but giving it a default value by using the ??
-operator if the function doesn’t know what it
-should be.
+----
 
-Note: You’ll see a common and valid use of
-the null assertion operator in the section
-below titled No promotion for non-local
-variables (in class methods). Another option is to shadow the non-local
-variable with a local one.
+----
+GOOD because text is local:
+
+bool isLong(String? text) {
+	if (text == null) {
+		return false;
+	}
+	return text.length > 100;
+}
+
+But No promotion for non-local variables (like in a class):
+
+class TextWidget {
+	String? text;
+	bool isLong() {
+		if (text == null) {
+		return false;
+		}
+		return text.length > 100; // error
+	}
+}
+
+Solution 1:
+class TextWidget {
+	String? text;
+	bool isLong() {
+		if (text == null) {
+		return false;
+		}
+		return text!.length > 100; // error
+	}
+}
+
+Solution 2 (shadowing the local variable):
+class TextWidget {
+	String? text;
+	bool isLong() {
+	final text = this.text; // shadowing
+		if (text == null) {
+		return false;
+		}
+		return text!.length > 100; // error
+	}
+}
