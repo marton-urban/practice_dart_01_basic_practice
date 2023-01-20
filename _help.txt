@@ -112,17 +112,3 @@ class Point extends Equatable {
   @override
   List<Object?> get props => [x,y];
   
-CASCADE(Path? path;)
-?..
-(not needed for non-nullable: Path path = Path();)
-..
-
-----
-void main() {
-  final list2 = (([1, 0, 2]..sort()).reversed.toList()
-    ..addAll([5, 3, 4])
-    ..sort())
-    .map((e) => e + 1).toList();
-  print(list2);
-}
-----
