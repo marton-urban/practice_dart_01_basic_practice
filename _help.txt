@@ -4,6 +4,10 @@ Collection-if/for/spread(...list, ...map): if (addblue) 'blue',
 //TODO
 /// documentation
 
+members: fields, methods (maybe only the non static ones)
+properties/fields: (non static) instance variables
+static fields: (static) class variables
+
 dart create
 code .
 flutter pub get
