@@ -20,6 +20,10 @@ dart migrate
 dart analyze     # or `flutter analyze`
 dart test     # or `flutter analyze`
 
+analyzer:
+ strong-mode:
+ implicit-dynamic: false
+
 TYPE CONVERSION:
 double.parse()   // from String
 int.tryparse()   // from String
@@ -74,10 +78,14 @@ list2 = [...list1];
 
 collection-if: if (addBlue) 'blue'
 			   if (addAll) ...['yellow','brown'],
+				 
+List.unmodifiable
 
 
 SET:
 .add('new item');
+.remove('item');
+.addAll(list);
 .elementAt(0);
 .union(anotherSet)
 .intersection(anotherSet)
