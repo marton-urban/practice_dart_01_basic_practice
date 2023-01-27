@@ -101,6 +101,22 @@ mymap.isEmpty
 FILE:
 File(inputFile).readAsLinesSync();
 
+REGEX
+RegExp('cat').hasMatch('concatenation'); OR
+'concatenation'.contains(RegExp('cat'));
+
+final matches = RegExp(r'<h1>(.+)</h1>').allMatches(text);  // (.+) marks this text as a regex group
+for (final match in matches) {
+  print(match.group(1));
+}
+
+RegExp(r'\p{Letter}', unicode: true); (https://www.regular-expressions.info/unicode.html#category)
+
+In any editor:
+Find: print\((.*)\)
+Replace with: $1
+$1 here is group1. This would for example replace print(text.startsWith('I')) with text.startsWith('I')
+
 NULL SAFETY (everything non-nullable must be initialized right away (classes), or through flow analysis (functions), or late)
 int? value;
 int sign = x >= 0 ? 1 : -1;
