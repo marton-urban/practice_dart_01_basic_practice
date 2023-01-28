@@ -21,22 +21,22 @@ class BinarySearchTree<E extends Comparable<E>> {
     if (root == null) {
       root = Node(value);
     } else {
-      _insertAt(root!, value);
+      _insertUnder(root!, value);
     }
   }
 
-  void _insertAt(Node<E> node, E value) {
+  void _insertUnder(Node<E> node, E value) {
     if (value.compareTo(node.value) < 0) {
       if (node.leftChild == null) {
         node.leftChild = Node(value);
       } else {
-        _insertAt(node.leftChild!, value);
+        _insertUnder(node.leftChild!, value);
       }
     } else {
       if (node.rightChild == null) {
         node.rightChild = Node(value);
       } else {
-        _insertAt(node.rightChild!, value);
+        _insertUnder(node.rightChild!, value);
       }
     }
   }
