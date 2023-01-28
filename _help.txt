@@ -1,6 +1,7 @@
 Mostly everything in Dart is a class, and objects are instances of these classes (numbers, functions and even null are objects).
 Collection-if/for/spread(...list, ...map): if (addblue) 'blue',
 158. video: Dartx
+Nullable Object? is the root of the type system.
 //TODO
 /// documentation
 
@@ -140,4 +141,9 @@ class Point extends Equatable {
 
   @override
   List<Object?> get props => [x,y];
-  
+
+INTERFACES
+DA Beyond the Basics p75: In the code above, you used a factory to return the concrete
+implementation of the interface. There are other options, though. Do a search
+for service locators (of which the get_it package is a good example) and
+dependency injection to learn more about this topic.
