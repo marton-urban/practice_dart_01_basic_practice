@@ -155,7 +155,7 @@ TESTING:
 dart pub add test --dev
 dart test (to run the test)
 
-VSCODE: import 'package:test_dart_sample/test_dart_sample.dart';
+VSCODE: import 'package:test/test.dart';
 DARTPAD: import 'package:flutter_test/flutter_test.dart';
 
 void main() {
