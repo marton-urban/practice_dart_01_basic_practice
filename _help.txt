@@ -22,6 +22,8 @@ dart pub get
 dart migrate
 dart analyze     # or `flutter analyze`
 dart test     # or `flutter analyze`
+dart fix --dry-run
+dart fix --apply
 
 analysis_options.yaml
 analyzer:
