@@ -9,7 +9,7 @@ The only props available for nullable types are toString(), == & hashCode
 
 - or make them nullable, so their default value is null
 
-- non-nullable class instance fields (non nullable fields) must also have a value before they reach the constructor body
+- non-nullable class instance fields (non nullable fields) must also have a value before they reach the constructor body (except late?)
 class RandomClass {
   int x
   int y = 7;
@@ -82,9 +82,7 @@ bool flowerIsBeautiful = isBeautiful('flower'
 Here’s an alternative to the assertion operator
 that won’t ever crash the app:
 
-bool flowerIsBeautiful = isBeautiful('flower'
-) ?? true;
-----
+bool flowerIsBeautiful = isBeautiful('flower') ?? true;
 
 ----
 GOOD because text is local:
@@ -97,6 +95,7 @@ bool isLong(String? text) {
 }
 
 But No promotion for non-local variables (like in a class):
+UPDATE: Dart 3.2 Non-null promotion for private final fields
 
 class TextWidget {
 	String? text;
@@ -115,7 +114,7 @@ class TextWidget {
 		if (text == null) {
 		return false;
 		}
-		return text!.length > 100; // error
+		return text!.length > 100;
 	}
 }
 
@@ -123,10 +122,21 @@ Solution 2 (shadowing the local variable):
 class TextWidget {
 	String? text;
 	bool isLong() {
-	final text = this.text; // shadowing
+		final text = this.text; // shadowing
 		if (text == null) {
 		return false;
 		}
-		return text!.length > 100; // error
+		return text.length > 100;
+	}
+}
+
+Solution 3 (Dart 3.2 Non-null promotion for private final fields):
+class TextWidget {
+	late final String? _text;
+	bool isLong() {
+		if (_text == null) {
+		return false;
+		}
+		return _text.length > 100;
 	}
 }
