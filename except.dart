@@ -11,7 +11,6 @@ void main() {
   } finally {
     print('cool');
   }
-  ;
 }
 
 double division(int numb1, int numb2) {

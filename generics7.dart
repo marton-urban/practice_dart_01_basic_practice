@@ -10,7 +10,7 @@ class Tuple<T> {
   T? get third => _c;
 
   Tuple.fromList(List<T> list)
-      : _a = list.length > 0 ? list[0] : null,
+      : _a = list.isNotEmpty ? list[0] : null,
         _b = list.length > 1 ? list[1] : null,
         _c = list.length > 2 ? list[2] : null;
 

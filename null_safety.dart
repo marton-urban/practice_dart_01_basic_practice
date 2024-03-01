@@ -11,41 +11,21 @@ int absoluteValue(int? value) {
   return value.abs();
 }
 
-void main() {}
-
-// non-nullable named arguments must be initialized, so you need required
-
-void printAbs({required int value}) {}
-
-// same with class contsructors
-
-class Host {
-  Host({required this.hostName});
-  final String hostName;
-}
-
-// same with class positional arguments
-
-class Host2 {
-  Host2([this.hostName]);
-  final String? hostName;
-}
-
 // null-aware cascade operator
 class Path {
   void moveTo(int x, int y) {}
   void lineTo(int x, int y) {}
 }
 
-void maion() {
-  Path? path;
+void main() {
+  // Path? path;
 
-  path
-    ?..moveTo(0, 0)
-    ..lineTo(2, 0)
-    ..lineTo(2, 2)
-    ..lineTo(0, 2)
-    ..lineTo(0, 0);
+  // path
+  //   ?..moveTo(0, 0)
+  //   ..lineTo(2, 0)
+  //   ..lineTo(2, 2)
+  //   ..lineTo(0, 2)
+  //   ..lineTo(0, 0);
 
 /*
     if (path == null) {

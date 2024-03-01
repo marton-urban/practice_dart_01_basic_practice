@@ -1,6 +1,6 @@
 extension IterableNumX<T extends num> on Iterable {
   T? sum() {
-    var sum;
+    dynamic sum;
     for (var current in this) {
       if (current != null) {
         if (sum == null) {
@@ -15,7 +15,7 @@ extension IterableNumX<T extends num> on Iterable {
 }
 
 void main() {
-  final total = ['cool'].sum();
+  final total = [1, 2, 3, 4].sum();
   final total2 = [null, null, 3.5].sum();
   print(total);
   print(total2);
