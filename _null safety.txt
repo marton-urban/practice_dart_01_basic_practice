@@ -38,15 +38,9 @@ class Car {
   int steer() => _speed -= 15;
 }
 
-- late with other 
+- use late with heavy computation:
 class Weather {
   late final int temp = readThermometer();
-}
-
-void main(List<String> arguments) {
-  var w = Weather();  // temp field is not initialized here
-  // w.temp = 5; you can assign it like this too, but the point is that you can only assign it once
-  print(w.temp + 25);  // but rather here when accessed since was lazily created
 }
 
 ----
