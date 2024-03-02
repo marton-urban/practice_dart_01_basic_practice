@@ -76,8 +76,7 @@ return false;
 return null;
 }
 
-bool flowerIsBeautiful = isBeautiful('flower'
-)!;
+bool flowerIsBeautiful = isBeautiful('flower')!;
 
 Here’s an alternative to the assertion operator
 that won’t ever crash the app:
