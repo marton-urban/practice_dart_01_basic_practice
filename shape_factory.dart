@@ -56,6 +56,6 @@ void main() {
       'radius': 5.0,
     },
   ];
-  final shapes = shapesJson.map((shapeJson) => Shape.fromJson(shapeJson));
+  final shapes = shapesJson.map(Shape.fromJson);
   shapes.forEach(printArea);
 }
