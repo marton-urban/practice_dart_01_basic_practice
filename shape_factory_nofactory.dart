@@ -25,7 +25,8 @@ void printArea(Shape shape) {
   print(shape.area);
 }
 
-Shape fromJson(Map<String, Object> json) {    // this could also be in the Shape class with static keyword
+Shape fromJson(Map<String, Object> json) {
+  // this could also be in the Shape class with static keyword
   final type = json['type'];
   switch (type) {
     case 'square':
@@ -56,6 +57,6 @@ void main() {
       'radius': 5.0,
     },
   ];
-  final shapes = shapesJson.map((shapeJson) => fromJson(shapeJson));
+  final shapes = shapesJson.map(fromJson);
   shapes.forEach(printArea);
 }
